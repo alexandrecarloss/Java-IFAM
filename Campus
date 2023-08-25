@@ -1,0 +1,8 @@
+package model;
+
+public class Campus {
+	public String sigla;
+	public String nome;
+	public String cidade;
+	public String bairro;
+}
