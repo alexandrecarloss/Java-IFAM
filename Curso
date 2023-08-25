@@ -1,0 +1,8 @@
+package model;
+
+public class Curso {
+	public String sigla;
+	public String nome;
+	public int duracao;
+	public Departamento departamento;
+}
