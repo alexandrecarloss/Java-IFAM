@@ -1,0 +1,20 @@
+package tela;
+
+import java.util.Scanner;
+
+import model.Aluno;
+
+public class AlunoInterfaceCadastro {
+	public Aluno cadastrarAluno() {
+		Aluno aluno = new Aluno();
+		Scanner e = new Scanner(System.in);
+		
+		System.out.printf("Infome a matrícula do aluno: ");
+		aluno.matricula = e.next();
+		
+		System.out.printf("Informe o nome do aluno: ");
+		aluno.nome = e.next();
+		
+		return aluno;
+	}
+}
