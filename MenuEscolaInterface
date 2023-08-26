@@ -33,6 +33,6 @@ public class MenuEscolaInterface {
 				cursoController.visualizar();
 				break;
 			}
-		}while(opcao != 3);
+		}while(opcao != 5);
 	}
 }
