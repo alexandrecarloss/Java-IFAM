@@ -3,16 +3,20 @@ package tela;
 import java.util.Scanner;
 
 import controller.AlunoController;
+import controller.CursoController;
 
 public class MenuEscolaInterface {
 	public void mostrarMenu() {
 		Scanner opcaoMenu = new Scanner(System.in);
 		int opcao = 0;
 		AlunoController alunoController = new AlunoController();
+		CursoController cursoController = new CursoController();
 		do {
 			System.out.println("1 Cadastrar um aluno");
 			System.out.println("2 Listar alunos");
-			System.out.println("3 Sair");
+			System.out.println("3 Cadastrar curso");
+			System.out.println("4 Visualizar cursos");
+			System.out.println("5 Sair");
 			opcao = opcaoMenu.nextInt();
 			
 			switch(opcao) {
@@ -21,6 +25,12 @@ public class MenuEscolaInterface {
 				break;
 			case 2:
 				alunoController.visualizar();
+				break;
+			case 3:
+				cursoController.cadastrar();
+				break;
+			case 4:
+				cursoController.visualizar();
 				break;
 			}
 		}while(opcao != 3);
