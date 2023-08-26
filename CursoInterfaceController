@@ -1,0 +1,23 @@
+package tela;
+
+import java.util.Scanner;
+
+import model.Curso;
+
+public class CursoInterfaceCadastro {
+	public Curso cadastrarCurso() {
+		Curso curso = new Curso();
+		
+Scanner e = new Scanner(System.in);
+		System.out.printf("Informe o nome do curso: ");
+		curso.nome = e.next();
+		
+		System.out.printf("Informe a sigla do curso: ");
+		curso.sigla = e.next();
+
+		System.out.printf("Informe a duração do curso: ");
+		curso.duracao = e.nextInt();
+		
+		return curso;
+	}
+}
