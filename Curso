@@ -1,8 +1,33 @@
 package model;
 
 public class Curso {
-	public String sigla;
-	public String nome;
-	public int duracao;
-	public Departamento departamento;
+	private String sigla;
+	private String nome;
+	private int duracao;
+	private Departamento departamento;
+	
+	public String getSigla() {
+		return sigla;
+	}
+	public void setSigla(String sigla) {
+		this.sigla = sigla;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public int getDuracao() {
+		return duracao;
+	}
+	public void setDuracao(int duracao) {
+		this.duracao = duracao;
+	}
+	public Departamento getDepartamento() {
+		return departamento;
+	}
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
+	}
 }
