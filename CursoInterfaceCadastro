@@ -1,23 +1,24 @@
-package tela;
+package controller;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.Curso;
+import tela.CursoInterfaceCadastro;
 
-public class CursoInterfaceCadastro {
-	public Curso cadastrarCurso() {
-		Curso curso = new Curso();
-		
-Scanner e = new Scanner(System.in);
-		System.out.printf("Informe o nome do curso: ");
-		curso.nome = e.next();
-		
-		System.out.printf("Informe a sigla do curso: ");
-		curso.sigla = e.next();
-
-		System.out.printf("Informe a duração do curso: ");
-		curso.duracao = e.nextInt();
-		
-		return curso;
+public class CursoController {
+	List<Curso> cursos = new ArrayList<>();
+	CursoInterfaceCadastro cic = new CursoInterfaceCadastro();
+	public void cadastrar() {
+		cursos.add(cic.cadastrarCurso());
+		System.out.printf("Total de cursos: %d\n", cursos.size());
+	}
+	
+	public void visualizar() {
+		for(Curso curso:cursos) {
+			System.out.printf("Nome: %s\t", curso.getNome());
+			System.out.printf("Sigla %s\t", curso.getSigla());
+			System.out.printf("Duração %d\n", curso.getDuracao());
+		}
 	}
 }
