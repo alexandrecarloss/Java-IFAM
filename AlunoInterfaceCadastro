@@ -1,20 +1,25 @@
-package tela;
+package controller;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.Aluno;
+import tela.AlunoInterfaceCadastro;
 
-public class AlunoInterfaceCadastro {
-	public Aluno cadastrarAluno() {
-		Aluno aluno = new Aluno();
-		Scanner e = new Scanner(System.in);
-		
-		System.out.printf("Infome a matrícula do aluno: ");
-		aluno.matricula = e.next();
-		
-		System.out.printf("Informe o nome do aluno: ");
-		aluno.nome = e.next();
-		
-		return aluno;
+public class AlunoController {
+	List<Aluno> alunos = new ArrayList<>();
+	
+	public void cadastrar() {
+		AlunoInterfaceCadastro aic = new AlunoInterfaceCadastro();
+		alunos.add(aic.cadastrarAluno());
+		System.out.printf("Total de alunos: %d\n", alunos.size());
 	}
+	
+	public void visualizar() {
+		for(Aluno aluno:alunos) {
+			System.out.printf("Matrícula: %s\t", aluno.getMatricula());
+			System.out.printf("Nome: %s\n", aluno.getNome());
+		}
+	}
+	
 }
