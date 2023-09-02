@@ -3,7 +3,9 @@ package tela;
 import java.util.Scanner;
 
 import controller.AlunoController;
+import controller.CampusController;
 import controller.CursoController;
+import controller.DepartamentoController;
 
 public class MenuEscolaInterface {
 	public void mostrarMenu() {
@@ -11,12 +13,18 @@ public class MenuEscolaInterface {
 		int opcao = 0;
 		AlunoController alunoController = new AlunoController();
 		CursoController cursoController = new CursoController();
+		DepartamentoController departamentoController = new DepartamentoController();
+		CampusController campusController = new CampusController();
 		do {
 			System.out.println("1 Cadastrar um aluno");
 			System.out.println("2 Listar alunos");
 			System.out.println("3 Cadastrar curso");
 			System.out.println("4 Visualizar cursos");
-			System.out.println("5 Sair");
+			System.out.println("5 Cadastrar departamento");
+			System.out.println("6 Visualizar departamento");
+			System.out.println("7 Cadastrar campus");
+			System.out.println("8 Visualizar campus");
+			System.out.println("9 Sair");
 			opcao = opcaoMenu.nextInt();
 			
 			switch(opcao) {
@@ -32,7 +40,19 @@ public class MenuEscolaInterface {
 			case 4:
 				cursoController.visualizar();
 				break;
+			case 5:
+				departamentoController.cadastrar();
+				break;
+			case 6:
+				departamentoController.visualizar();
+				break;
+			case 7:
+				campusController.cadastrar();
+				break;
+			case 8:
+				campusController.visualizar();
+				break;				
 			}
-		}while(opcao != 5);
+		}while(opcao != 9);
 	}
 }
