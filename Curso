@@ -6,6 +6,23 @@ public class Curso {
 	private int duracao;
 	private Departamento departamento;
 	
+	public Curso() {}
+	
+	public Curso(String sigla, String nome, int duracao, Departamento departamento) {
+		super();
+		this.sigla = sigla;
+		this.nome = nome;
+		this.duracao = duracao;
+		this.departamento = departamento;
+	}
+	
+	public Curso(String sigla, String nome, int duracao) {
+		super();
+		this.sigla = sigla;
+		this.nome = nome;
+		this.duracao = duracao;
+	}
+	
 	public String getSigla() {
 		return sigla;
 	}
