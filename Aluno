@@ -2,8 +2,21 @@ package model;
 
 public class Aluno {
 	private String matricula;
-	private String nome;
+	private String nome;	
 	private Curso curso;
+	
+	public Aluno(String matricula, String nome, Curso curso) {
+		this.matricula = matricula;
+		this.nome = nome;
+		this.curso = curso;
+	}
+	
+	public Aluno(String nome, String matricula) {
+		this.nome = nome;
+		this.matricula = matricula;
+	}
+	
+	public Aluno() {}
 	
 	public String getMatricula() {
 		return matricula;
