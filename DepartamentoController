@@ -1,0 +1,24 @@
+package controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Departamento;
+import tela.DepartamentoInterfaceCadastro;
+
+public class DepartamentoController {
+	List<Departamento> departamentos = new ArrayList<>();
+	DepartamentoInterfaceCadastro dic = new DepartamentoInterfaceCadastro();
+	public void cadastrar() {
+		departamentos.add(dic.cadastrarDepartamento());
+		System.out.printf("Total de departamentos: %d\n", departamentos.size());
+	}
+	
+	public void visualizar() {
+		for(Departamento departamento:departamentos) {
+			System.out.printf("Nome: %s\t", departamento.getNome());
+			System.out.printf("Sigla %s\t\n", departamento.getSigla());
+		}
+	}
+}
+
