@@ -6,6 +6,15 @@ public class Campus {
 	private String cidade;
 	private String bairro;
 	
+	public Campus() {}
+	
+	public Campus(String sigla, String nome, String cidade, String bairro) {
+		this.sigla = sigla;
+		this.nome = nome;
+		this.cidade = cidade;
+		this.bairro = bairro;
+	}
+	
 	public String getSigla() {
 		return sigla;
 	}
