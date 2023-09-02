@@ -1,0 +1,27 @@
+package tela;
+
+import java.util.Scanner;
+
+import model.Campus;
+
+public class CampusInterfaceCadastro {
+	public Campus cadastrarCampus() {
+		Campus campus = new Campus();
+		
+		Scanner e = new Scanner(System.in);
+		Scanner eNomeCampus = new Scanner(System.in);
+		System.out.printf("Informe a sigla do campus: ");
+		campus.setSigla(e.next());
+		
+		System.out.printf("Informe o nome do campus: ");
+		campus.setNome(eNomeCampus.nextLine());
+		
+		System.out.printf("Informe a cidade do campus: ");
+		campus.setCidade(e.next());
+		
+		System.out.printf("Informe o bairro do campus: ");
+		campus.setBairro(e.next());
+		
+		return campus;
+	}
+}
