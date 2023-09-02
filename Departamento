@@ -5,6 +5,21 @@ public class Departamento {
 	private String sigla;
 	private Campus campus;
 	
+	public Departamento() {}
+	
+	public Departamento(String nome, String sigla, Campus campus) {
+		super();
+		this.nome = nome;
+		this.sigla = sigla;
+		this.campus = campus;
+	}
+	
+	public Departamento(String nome, String sigla) {
+		super();
+		this.nome = nome;
+		this.sigla = sigla;
+	}
+	
 	public String getNome() {
 		return nome;
 	}
