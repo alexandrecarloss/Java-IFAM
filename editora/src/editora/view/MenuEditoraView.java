@@ -13,11 +13,12 @@ public class MenuEditoraView {
 		
 		do {
 			System.out.println("1. Cadastrar Livro");
-			System.out.println("2. Cadastrar Páginas");
+			System.out.println("2. Cadastrar PÃ¡ginas");
 			System.out.println("3. Listar Livros");
 			System.out.println("4. Ver um Livro");
-			System.out.println("5. Sair");
-			System.out.print("Escolha uma opção: ");
+			System.out.println("5. Atualizar livro");
+			System.out.println("6. Sair");
+			System.out.print("Escolha uma opÃ§Ã£o: ");
 			opcao = opcaoMenu.nextInt();
 			
 			switch(opcao) {
@@ -32,8 +33,12 @@ public class MenuEditoraView {
 				break;
 			case 4:
 				livroView.mostrarLivro();
+				break;
+			case 5:
+				livroView.atualizarLivro();
+				break;
 			}
-		} while(opcao != 5);
+		} while(opcao != 6);
 		
 	}
 }
