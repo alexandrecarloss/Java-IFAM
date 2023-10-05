@@ -8,8 +8,12 @@ import editora.model.Livro;
 public class LivroController {
 	private List<Livro> livros = new ArrayList<>();
 	
-	public void inserirLivro(Livro livro) {
+	public void salvar(Livro livro) {
 		livros.add(livro);
+	}
+	
+	public void salvar(int i, Livro livro) {
+		livros.set(i, livro);
 	}
 	
 	public List<Livro> obterLivros(){
