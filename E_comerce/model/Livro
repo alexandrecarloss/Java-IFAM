@@ -1,0 +1,10 @@
+package model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Livro extends Produto {
+	public String titulo, isbn, editora;
+	public List<String> autores = new ArrayList<>();
+	
+}
