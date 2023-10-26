@@ -1,0 +1,16 @@
+package model;
+
+public class ECommerce {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Livro harryPotter = new Livro();
+		harryPotter.precoAtual = (float) 55.90;		
+		harryPotter.qteEstoque = 2;
+		Produto produto = new Produto();
+		produto.descricao = "Harry Potter e a Pedra Filosofal";
+		//produto.autores = "J.K. Rowlling";
+		
+	}
+
+}
