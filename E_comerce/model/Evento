@@ -1,0 +1,6 @@
+package model;
+
+public class Evento {
+	public String nome, data, local, tipo, programacao;
+	public Organizador organizador;
+}
