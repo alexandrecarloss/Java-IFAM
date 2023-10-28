@@ -1,7 +1,7 @@
 package model;
 
 public class Produto {
-	String codigo, descricao;
-	float precoAtual;
-	int qteEstoque;
+	public String codigo, descricao;
+	public float precoAtual;
+	public int qteEstoque;
 }
