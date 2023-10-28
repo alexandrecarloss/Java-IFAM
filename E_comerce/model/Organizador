@@ -1,0 +1,5 @@
+package model;
+
+public class Organizador {
+	public String nome, rezaoSocial, endereco, cnpj, responsavel;	
+}
