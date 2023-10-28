@@ -1,0 +1,8 @@
+package model;
+
+public class Ingresso extends Produto {
+	public Float precoAtual;
+	public String comprador, localEvento;
+	public int numero;
+	public Evento evento;
+}
