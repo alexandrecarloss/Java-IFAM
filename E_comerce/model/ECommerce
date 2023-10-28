@@ -1,60 +1,58 @@
-import model.Evento;
-import model.Ingresso;
-import model.Livro;
-import model.Produto;
-import model.Organizador;
+package model;
 
-public class ECommerce {
+public class EComerce {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//18/10
-		Livro harryPotter = new Livro();
-		harryPotter.precoAtual = 55.90f;		
-		harryPotter.qteEstoque = 2;
-		Produto produto = new Produto();
-		produto.descricao = "Harry Potter e a Pedra Filosofal";
-		//produto.autores = "J.K. Rowlling"; //Errado: 
-		//20/10
-		Organizador organizador = new Organizador();
-		organizador.nome = "Instituto Campus Party";
-		//...
-		Evento campusPartyAmazonia = new Evento();
-		campusPartyAmazonia.nome = "Campus Party";
-		
-		Ingresso ingresso = new Ingresso();
-		ingresso.evento = campusPartyAmazonia; 
-		campusPartyAmazonia.organizador = organizador;
-		System.out.printf("Evento %s\tOrganizador%s\n", ingresso.evento.nome, ingresso.evento.organizador.nome);
-		ingresso.precoAtual = 370.99f; //herança
-		ingresso.codigo = "300205";
-		ingresso.numero = 3451;
-		//Produto produto; //Produto já tinha sido criado
-		produto = harryPotter;
-		System.out.println(produto.precoAtual);
-		//System.out.println(produto.autores); Errado autores não é atributo de produto
-		Livro livro = (Livro) produto;
-		System.out.println(livro.autores);
-		produto = ingresso;
-		System.out.println(produto.precoAtual);
-		produto.precoAtual = 50f;
-		//produto.numero = "100559";//Errado numero não é atributo de produto
-		
-		//25/10
-		//Livro harryPotter = new Livro(); //harryPotter já havia sido criado
-		harryPotter.precoAtual = 55.90f;
-		Produto srAneis = new Produto();
-		srAneis.descricao = "O Senhor dos Anéis: a sociedade do anel";
-		//srAneis.autores = "J.R.R Talkien"; //Errado: Autores não é atributo de produto
-		//Produto produto; //produto já criado
-		produto = srAneis;
-		produto = harryPotter;
-		produto.qteEstoque = 10;
-		harryPotter.editora = "Atual";
-		harryPotter.descricao = "Primeiro livro sobre a serie Harry Potter";
-		//System.out.printf("Titulo: %s\n", produto.titulo); //Errado, titulo é atributo de livro as não de produto
-		System.out.printf("Titulo: %s\n", harryPotter.titulo);
-		srAneis = harryPotter;		
+				Livro harryPotter = new Livro();
+				harryPotter.precoAtual = 55.90f;		
+				harryPotter.qteEstoque = 2;
+				Produto produto = new Produto();
+				produto.descricao = "Harry Potter e a Pedra Filosofal";
+				//produto.autores = "J.K. Rowlling"; //Errado: 
+				//20/10
+				Organizador organizador = new Organizador();
+				organizador.nome = "Instituto Campus Party";
+				//...
+				Evento campusPartyAmazonia = new Evento();
+				campusPartyAmazonia.nome = "Campus Party";
+				
+				Ingresso ingresso = new Ingresso();
+				ingresso.evento = campusPartyAmazonia; 
+				campusPartyAmazonia.organizador = organizador;
+				System.out.printf("Evento %s\tOrganizador: %s\n", ingresso.evento.nome, ingresso.evento.organizador.nome);
+				ingresso.precoAtual = 370.99f; //herança
+				ingresso.codigo = "300205";
+				ingresso.numero = 3451;
+				//Produto produto; //Produto já tinha sido criado
+				produto = harryPotter;
+				System.out.println(produto.precoAtual);
+				//System.out.println(produto.autores); Errado autores não é atributo de produto
+				Livro livro = (Livro) produto;
+				livro.autores = "J.K. Rowlling";
+				System.out.printf("Autores: %s\n", livro.autores);
+				produto = ingresso;
+				System.out.printf("Preço atual: %f\n",produto.precoAtual);
+				produto.precoAtual = 50f;
+				//produto.numero = "100559";//Errado numero não é atributo de produto
+				
+				//25/10
+				//Livro harryPotter = new Livro(); //harryPotter já havia sido criado
+				harryPotter.precoAtual = 55.90f;
+				Produto srAneis = new Produto();
+				srAneis.descricao = "O Senhor dos Anéis: a sociedade do anel";
+				//srAneis.autores = "J.R.R Talkien"; //Errado: Autores não é atributo de produto
+				//Produto produto; //produto já criado
+				produto = srAneis;
+				produto = harryPotter;
+				produto.qteEstoque = 10;
+				harryPotter.editora = "Atual";
+				harryPotter.descricao = "Primeiro livro sobre a serie Harry Potter";
+				harryPotter.titulo = "Harry Potter e a pedra filosofal";
+				//System.out.printf("Titulo: %s\n", produto.titulo); //Errado, titulo é atributo de livro as não de produto
+				System.out.printf("Titulo: %s\n", harryPotter.titulo);
+				srAneis = harryPotter;
 	}
 
 }
