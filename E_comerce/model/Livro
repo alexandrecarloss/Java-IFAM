@@ -1,6 +1,54 @@
 package model;
 
 public class Livro extends Produto {
-	public String titulo, isbn, editora, autores;
-	//public List<String> autores = new ArrayList<>();
+	private String titulo, isbn, editora, autores;
+/*
+	@Override
+	public String toString() {
+		return "Livro [titulo=" + titulo + ", isbn=" + isbn + ", editora=" + editora + ", autores=" + autores + "]";
+	}
+*/
+	public Livro() {
+		
+	}
+
+	public Livro(String codigo, String descricao, float precoAtual, int qteEstoque, String titulo, String isbn, String editora, String autores) {
+		this.titulo = titulo;
+		this.isbn = isbn;
+		this.editora = editora;
+		this.autores = autores;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
+	public String getEditora() {
+		return editora;
+	}
+
+	public void setEditora(String editora) {
+		this.editora = editora;
+	}
+
+	public String getAutores() {
+		return autores;
+	}
+
+	public void setAutores(String autores) {
+		this.autores = autores;
+	}
+	
 }
