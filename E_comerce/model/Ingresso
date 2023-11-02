@@ -1,7 +1,50 @@
 package model;
 
 public class Ingresso extends Produto {
-	public String comprador, localEvento;
-	public int numero;
-	public Evento evento;
+	private String comprador, localEvento;
+	private int numero;
+	private Evento evento;
+	/*
+	@Override
+	public String toString() {
+		return "Ingresso [comprador=" + comprador + ", localEvento=" + localEvento + ", numero=" + numero + ", evento="
+				+ evento + "]";
+	}
+	*/
+	public Ingresso() {
+		
+	}
+	
+	public Ingresso(String comprador, String localEvento, int numero, Evento evento) {
+		this.comprador = comprador;
+		this.localEvento = localEvento;
+		this.numero = numero;
+		this.evento = evento;
+	}
+	public String getComprador() {
+		return comprador;
+	}
+	public void setComprador(String comprador) {
+		this.comprador = comprador;
+	}
+	public String getLocalEvento() {
+		return localEvento;
+	}
+	public void setLocalEvento(String localEvento) {
+		this.localEvento = localEvento;
+	}
+	public int getNumero() {
+		return numero;
+	}
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+	public Evento getEvento() {
+		return evento;
+	}
+	public void setEvento(Evento evento) {
+		this.evento = evento;
+	}
+	
+	
 }
