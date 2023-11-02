@@ -1,6 +1,75 @@
 package model;
 
 public class Evento {
-	public String nome, data, local, tipo, programacao;
-	public Organizador organizador;
+	private String nome, data, local, tipo, programacao;
+	private Organizador organizador;
+	/*
+	@Override
+	public String toString() {
+		return "Evento [nome=" + nome + ", data=" + data + ", local=" + local + ", tipo=" + tipo + ", programacao="
+				+ programacao + ", organizador=" + organizador + "]";
+	}
+	*/
+	public Evento() {
+		
+	}
+	
+	public Evento(String nome, String data, String local, String tipo, String programacao, Organizador organizador) {
+		this.nome = nome;
+		this.data = data;
+		this.local = local;
+		this.tipo = tipo;
+		this.programacao = programacao;
+		this.organizador = organizador;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public String getLocal() {
+		return local;
+	}
+
+	public void setLocal(String local) {
+		this.local = local;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getProgramacao() {
+		return programacao;
+	}
+
+	public void setProgramacao(String programacao) {
+		this.programacao = programacao;
+	}
+
+	public Organizador getOrganizador() {
+		return organizador;
+	}
+
+	public void setOrganizador(Organizador organizador) {
+		this.organizador = organizador;
+	}
+	
+	
 }
