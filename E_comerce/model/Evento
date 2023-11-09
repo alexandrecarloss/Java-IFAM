@@ -3,13 +3,13 @@ package model;
 public class Evento {
 	private String nome, data, local, tipo, programacao;
 	private Organizador organizador;
-	/*
+	
 	@Override
 	public String toString() {
 		return "Evento [nome=" + nome + ", data=" + data + ", local=" + local + ", tipo=" + tipo + ", programacao="
 				+ programacao + ", organizador=" + organizador + "]";
 	}
-	*/
+	
 	public Evento() {
 		
 	}
