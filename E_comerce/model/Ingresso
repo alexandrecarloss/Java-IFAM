@@ -4,13 +4,13 @@ public class Ingresso extends Produto {
 	private String comprador, localEvento;
 	private int numero;
 	private Evento evento;
-	/*
+	
 	@Override
 	public String toString() {
 		return "Ingresso [comprador=" + comprador + ", localEvento=" + localEvento + ", numero=" + numero + ", evento="
 				+ evento + "]";
 	}
-	*/
+	
 	public Ingresso() {
 		
 	}
