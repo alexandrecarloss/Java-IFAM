@@ -2,13 +2,13 @@ package model;
 
 public class Organizador {
 	private String nome, rezaoSocial, endereco, cnpj, responsavel;
-/*
+
 	@Override
 	public String toString() {
 		return "Organizador [nome=" + nome + ", rezaoSocial=" + rezaoSocial + ", endereco=" + endereco + ", cnpj="
 				+ cnpj + ", responsavel=" + responsavel + "]";
 	}
-*/
+
 	public Organizador(String nome, String rezaoSocial, String endereco, String cnpj, String responsavel) {
 		super();
 		this.nome = nome;
@@ -17,6 +17,8 @@ public class Organizador {
 		this.cnpj = cnpj;
 		this.responsavel = responsavel;
 	}
+	
+	public Organizador() {}
 
 	public String getNome() {
 		return nome;
