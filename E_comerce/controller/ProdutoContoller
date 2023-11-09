@@ -1,0 +1,21 @@
+package controller;
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Produto;
+
+public class ProdutoController {
+	private List<Produto> produtos = new ArrayList<>();
+	
+	public void setProduto(Produto produto) {
+		produtos.add(produto);
+	}
+	
+	public Produto getProduto(int indice) {
+		return produtos.get(indice);
+	}
+	
+	public int quantidadeProduto() {
+		return produtos.size();
+	}
+}
