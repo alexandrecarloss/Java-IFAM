@@ -1,62 +1,90 @@
 package model;
-
+import controller.ProdutoController;
 public class EComerce {
+
 	public static void main(String[] args) {
+		ProdutoController produtoController = new ProdutoController();
+		
 		// TODO Auto-generated method stub
 		//18/10
-		/*
+		
 		Livro harryPotter = new Livro();
-		harryPotter.precoAtual = 55.90f;		
-		harryPotter.qteEstoque = 2;
+		harryPotter.setPrecoAtual(55.90f);		
+		harryPotter.setQteEstoque(2);
 		Produto produto = new Produto();
-		produto.descricao = "Harry Potter e a Pedra Filosofal";
+		produto.setDescricao("Harry Potter e a Pedra Filosofal");
 		//produto.autores = "J.K. Rowlling"; //Errado: 
 		//20/10
 		Organizador organizador = new Organizador();
-		organizador.nome = "Instituto Campus Party";
+		organizador.setNome("Instituto Campus Party");
 		//...
 		Evento campusPartyAmazonia = new Evento();
-		campusPartyAmazonia.nome = "Campus Party";
+		campusPartyAmazonia.setNome("Campus Party");
 		
 		Ingresso ingresso = new Ingresso();
-		ingresso.evento = campusPartyAmazonia; 
-		campusPartyAmazonia.organizador = organizador;
-		System.out.printf("Evento %s\tOrganizador: %s\n", ingresso.evento.nome, ingresso.evento.organizador.nome);
-		ingresso.precoAtual = 370.99f; //herança
-		ingresso.codigo = "300205";
-		ingresso.numero = 3451;
+		ingresso.setEvento(campusPartyAmazonia); 
+		campusPartyAmazonia.setOrganizador(organizador);
+		//System.out.printf("Evento %s\tOrganizador: %s\n", ingresso.evento.nome, ingresso.evento.organizador.nome);
+		ingresso.setPrecoAtual(370.99f); //herança
+		ingresso.setCodigo("300205");
+		ingresso.setNumero(3451);
 		//Produto produto; //Produto já tinha sido criado
 		produto = harryPotter;
-		System.out.println(produto.precoAtual);
+		//System.out.println(produto.precoAtual);
 		//System.out.println(produto.autores); Errado autores não é atributo de produto
 		Livro livro = (Livro) produto;
-		livro.autores = "J.K. Rowlling";
-		System.out.printf("Autores: %s\n", livro.autores);
+		livro.setAutores("J.K. Rowlling");
+		//System.out.printf("Autores: %s\n", livro.autores);
 		produto = ingresso;
-		System.out.printf("Preço atual: %f\n",produto.precoAtual);
-		produto.precoAtual = 50f;
+		//System.out.printf("Preço atual: %f\n",produto.precoAtual);
+		produto.setPrecoAtual(50f);
 		//produto.numero = "100559";//Errado numero não é atributo de produto
 		
 		//25/10
 		//Livro harryPotter = new Livro(); //harryPotter já havia sido criado
-		harryPotter.precoAtual = 55.90f;
+		harryPotter.setPrecoAtual(55.90f);
 		Produto srAneis = new Produto();
-		srAneis.descricao = "O Senhor dos Anéis: a sociedade do anel";
+		srAneis.setDescricao("O Senhor dos Anéis: a sociedade do anel");
 		//srAneis.autores = "J.R.R Talkien"; //Errado: Autores não é atributo de produto
 		//Produto produto; //produto já criado
 		produto = srAneis;
 		produto = harryPotter;
-		produto.qteEstoque = 10;
-		harryPotter.editora = "Atual";
-		harryPotter.descricao = "Primeiro livro sobre a serie Harry Potter";
-		harryPotter.titulo = "Harry Potter e a pedra filosofal";
+		produto.setQteEstoque(10);
+		harryPotter.setEditora("Atual");
+		harryPotter.setDescricao("Primeiro livro sobre a serie Harry Potter");
+		harryPotter.setTitulo("Harry Potter e a pedra filosofal");
 		//System.out.printf("Titulo: %s\n", produto.titulo); //Errado, titulo é atributo de livro as não de produto
-		System.out.printf("Titulo: %s\n", harryPotter.titulo);
+		//System.out.printf("Titulo: %s\n", harryPotter.titulo);
 		srAneis = harryPotter;
-		*/
-		Livro livro = new Livro();
-		//livro.setAutores("Autor");
-		//livro.setPrecoAtual(100f);
-		System.out.println(livro);
+		ingresso.setDescricao("Ingresso para o Campus Party");
+		ingresso.setQteEstoque(538);
+		ingresso.setCodigo("10203");
+		livro.setAutores("Autor");
+		livro.setTitulo("");
+		livro.setPrecoAtual(100f);
+		//System.out.println(livro);
+		
+		Produto p;
+		p = new Livro();
+		Livro l1 = new Livro();
+		Livro l2;
+		p.setDescricao("Livro o Hobbit capa dura - Edição especial");
+		//p.setTitulo("O Hobbit");
+		l2 = (Livro) p;
+		l2.setTitulo("O Hobbit");
+		l2.setAutores("J.R.R. Tolkien");
+		//System.out.printf("Descrição: %s\n", p.getDescricao());
+		produtoController.setProduto(p);
+		produtoController.setProduto(l2);
+		produtoController.setProduto(harryPotter);
+		produtoController.setProduto(produto);
+		produtoController.setProduto(ingresso);
+		produtoController.setProduto(srAneis);
+		produtoController.setProduto(livro);
+		for(int i = 0; i < produtoController.quantidadeProduto(); i++) {
+			System.out.println(produtoController.getProduto(i));
+		}
+		
 	}
+
 }
