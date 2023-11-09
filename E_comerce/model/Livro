@@ -1,13 +1,15 @@
 package model;
 
 public class Livro extends Produto {
-	private String titulo, isbn, editora, autores;
-/*
+	private String titulo, isbn, editora, autor;
+	//private List<String> autores = new ArrayList<>();
+	
+
 	@Override
 	public String toString() {
-		return "Livro [titulo=" + titulo + ", isbn=" + isbn + ", editora=" + editora + ", autores=" + autores + "]";
+		return "Livro [titulo=" + titulo + ", isbn=" + isbn + ", editora=" + editora + ", autores=" + autor + "]";
 	}
-*/
+
 	public Livro() {
 		
 	}
@@ -16,9 +18,15 @@ public class Livro extends Produto {
 		this.titulo = titulo;
 		this.isbn = isbn;
 		this.editora = editora;
-		this.autores = autores;
+		this.autor = autores;
 	}
 
+	public String getDescricao() {
+		if(super.getDescricao() != null) 
+			return super.getDescricao();
+		return titulo + " " + autor;
+	}
+	
 	public String getTitulo() {
 		return titulo;
 	}
@@ -44,11 +52,11 @@ public class Livro extends Produto {
 	}
 
 	public String getAutores() {
-		return autores;
+		return autor;
 	}
 
 	public void setAutores(String autores) {
-		this.autores = autores;
+		this.autor = autores;
 	}
 	
 }
