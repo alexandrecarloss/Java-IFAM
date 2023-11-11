@@ -1,0 +1,26 @@
+package view;
+
+import java.util.Scanner;
+
+import model.Evento;
+
+public class EventoInterface {
+	public static Evento cadastrarEvento() {
+		Scanner eEvento = new Scanner(System.in);
+		Evento evento = new Evento();
+		System.out.println("CADASTRO DE EVENTO");
+		System.out.printf("Nome do evento: ");
+		evento.setNome(eEvento.nextLine());
+		System.out.printf("Data do evento: ");
+		evento.setData(eEvento.nextLine());
+		System.out.printf("Local do evento: ");
+		evento.setLocal(eEvento.nextLine());
+		System.out.print("Tipo do evento: ");
+		evento.setTipo(eEvento.nextLine());
+		System.out.print("Programação do evento: ");
+		evento.setProgramacao(eEvento.nextLine());
+		evento.setOrganizador(OrganizadorInterface.cadastrarOrganizador());
+		return evento;
+	}
+	
+}
