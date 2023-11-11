@@ -1,21 +1,25 @@
 package model;
 
 public class Organizador {
-	private String nome, rezaoSocial, endereco, cnpj, responsavel;
+	private String nome, razaoSocial, endereco, cnpj, responsavel, telefone;
 
 	@Override
 	public String toString() {
-		return "Organizador [nome=" + nome + ", rezaoSocial=" + rezaoSocial + ", endereco=" + endereco + ", cnpj="
-				+ cnpj + ", responsavel=" + responsavel + "]";
+		return "Organizador [nome=" + nome + ", rezaoSocial=" + razaoSocial + ", endereco=" + endereco + ", cnpj="
+				+ cnpj + ", responsavel=" + responsavel + ", telefone=" + telefone + "]";
 	}
 
-	public Organizador(String nome, String rezaoSocial, String endereco, String cnpj, String responsavel) {
+	
+
+
+	public Organizador(String nome, String rezaoSocial, String endereco, String cnpj, String responsavel, String telefone) {
 		super();
 		this.nome = nome;
-		this.rezaoSocial = rezaoSocial;
+		this.razaoSocial = rezaoSocial;
 		this.endereco = endereco;
 		this.cnpj = cnpj;
 		this.responsavel = responsavel;
+		this.telefone = telefone;
 	}
 	
 	public Organizador() {}
@@ -29,11 +33,11 @@ public class Organizador {
 	}
 
 	public String getRezaoSocial() {
-		return rezaoSocial;
+		return razaoSocial;
 	}
 
 	public void setRezaoSocial(String rezaoSocial) {
-		this.rezaoSocial = rezaoSocial;
+		this.razaoSocial = rezaoSocial;
 	}
 
 	public String getEndereco() {
@@ -60,5 +64,12 @@ public class Organizador {
 		this.responsavel = responsavel;
 	}	
 	
+	public String getTelefone() {
+		return telefone;
+	}
+	
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
 	
 }
