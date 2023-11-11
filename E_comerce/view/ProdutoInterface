@@ -1,0 +1,24 @@
+package view;
+
+import java.util.Scanner;
+
+import model.Produto;
+
+
+public class ProdutoInterface {
+	public Produto cadastrarProduto() {
+		Scanner eProduto = new Scanner(System.in);
+		Produto produto = new Produto();
+		System.out.println("CADASTRO DE PRODUTO");
+		System.out.printf("Código do produto: ");
+		produto.setCodigo(eProduto.nextLine());
+		System.out.printf("Descrição do produto: ");
+		produto.setDescricao(eProduto.nextLine());
+		System.out.printf("Preço atual do produto: ");
+		produto.setPrecoAtual(eProduto.nextFloat());
+		System.out.printf("Quantidade de estoque do produto: ");
+		produto.setQteEstoque(eProduto.nextInt());
+		
+		return produto;
+	}
+}
