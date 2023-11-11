@@ -1,0 +1,28 @@
+package view;
+
+import java.util.Scanner;
+
+import model.Organizador;
+
+public class OrganizadorInterface {
+	
+	public static Organizador cadastrarOrganizador() {
+		Scanner eOrganizador = new Scanner(System.in);
+		Organizador organizador = new Organizador();
+		System.out.println("CADASTRO DE ORGANIZADOR");
+		System.out.printf("Nome do organizador: ");
+		organizador.setNome(eOrganizador.nextLine());
+		System.out.printf("Razao social do organizador: ");
+		organizador.setRezaoSocial(eOrganizador.nextLine());
+		System.out.printf("Endereço do organizador: ");
+		organizador.setEndereco(eOrganizador.nextLine());
+		System.out.printf("CNPJ do organizador: ");
+		organizador.setCnpj(eOrganizador.nextLine());
+		System.out.printf("Responsável organizador: ");
+		organizador.setResponsavel(eOrganizador.nextLine());
+		System.out.printf("Telefone do organizador: ");
+		organizador.setTelefone(eOrganizador.nextLine());
+		
+		return organizador;
+	}
+}
