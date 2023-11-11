@@ -1,0 +1,38 @@
+package view;
+
+import java.util.Scanner;
+
+import controller.EventoController;
+import controller.IngressoController;
+import controller.LivroController;
+import controller.OrganizadorController;
+import controller.ProdutoController;
+
+public class MenuEcommerceInterface {
+	void mostrarMenu() {
+		Scanner opcaoMenu = new Scanner(System.in);
+		int opcao = -1;
+		EventoController eventoController = new EventoController();
+		IngressoController ingressoController = new IngressoController();
+		LivroController livroController = new LivroController();
+		OrganizadorController organizadorController = new OrganizadorController();
+		ProdutoController produtoController = new ProdutoController();
+		
+		LivroInterface livroInterface = new LivroInterface();
+		while(opcao != 0) {
+			System.out.println("0 Sair");
+			System.out.println("1 Adicionar Livro");
+			System.out.println("1 Adicionar Ingresso");
+			System.out.println("2 Selecionar um livro");
+			opcao = opcaoMenu.nextInt();
+			switch(opcao) {
+			case 1:
+				
+				break;
+			case 2:
+				
+				break;
+			}
+		} 
+	}
+}
