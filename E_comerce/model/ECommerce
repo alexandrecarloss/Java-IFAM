@@ -1,5 +1,7 @@
 package model;
 import controller.ProdutoController;
+import view.EventoInterface;
+import view.IngressoInterface;
 public class EComerce {
 
 	public static void main(String[] args) {
@@ -82,9 +84,14 @@ public class EComerce {
 		produtoController.setProduto(srAneis);
 		produtoController.setProduto(livro);
 		for(int i = 0; i < produtoController.quantidadeProduto(); i++) {
-			System.out.println(produtoController.getProduto(i));
+			//System.out.println(produtoController.getProduto(i));
 		}
+		EventoInterface ei = new EventoInterface();
+		IngressoInterface ii = new IngressoInterface();
+		Ingresso ing = ii.cadastrarIngresso();
 		
+		System.out.println(ing);
+		Evento evento = ei.cadastrarEvento();
 	}
 
 }
