@@ -1,0 +1,24 @@
+package view;
+
+import java.util.Scanner;
+
+import model.Livro;
+
+public class LivroInterface {
+	public Livro cadastrarLivro() {
+		Scanner eLivro = new Scanner(System.in);
+		Livro livro = new Livro();
+		System.out.println("CADASTRO DE LIVRO");
+		System.out.printf("Título do livro: ");
+		livro.setTitulo(eLivro.nextLine());
+		System.out.printf("Autor(es) do livro do livro: ");
+		livro.setAutores(eLivro.nextLine());
+		System.out.printf("ISBN do livro: ");
+		livro.setIsbn(eLivro.nextLine());
+		System.out.printf("Editora do livro: ");
+		livro.setEditora(eLivro.nextLine());
+		
+		return livro;
+	}
+	
+}
