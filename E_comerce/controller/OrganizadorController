@@ -1,5 +1,27 @@
 package controller;
 
-public class OrganizadorController {
+import java.util.ArrayList;
+import java.util.List;
 
+import model.Organizador;
+
+
+public class OrganizadorController {
+	private List<Organizador> organizadores = new ArrayList<>();
+	
+	public void setOrganizador(Organizador evento) {
+		organizadores.add(evento);
+	}
+	
+	public Organizador getOrganizador(int indice) {
+		return organizadores.get(indice);
+	}
+	
+	public List<Organizador> getTodosOrganizadores() {
+		return organizadores;
+	}
+	
+	public int quantidadeOrganizador() {
+		return organizadores.size();
+	}
 }
