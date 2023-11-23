@@ -1,5 +1,26 @@
 package controller;
 
-public class EventoController {
+import java.util.ArrayList;
+import java.util.List;
 
+import model.Evento;
+
+public class EventoController {
+	private List<Evento> eventos = new ArrayList<>();
+	
+	public void setEvento(Evento evento) {
+		eventos.add(evento);
+	}
+	
+	public Evento getEvento(int indice) {
+		return eventos.get(indice);
+	}
+	
+	public List<Evento> getTodosEventos() {
+		return eventos;
+	}
+	
+	public int quantidadeEvento() {
+		return eventos.size();
+	}
 }
