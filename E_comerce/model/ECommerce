@@ -1,15 +1,28 @@
 package model;
+import controller.EventoController;
+import controller.IngressoController;
+import controller.LivroController;
+import controller.OrganizadorController;
 import controller.ProdutoController;
 import view.EventoInterface;
 import view.IngressoInterface;
+import view.MenuEcommerceInterface;
 public class EComerce {
 
 	public static void main(String[] args) {
-		ProdutoController produtoController = new ProdutoController();
+		/*
 		
+		EventoController eventoController = new EventoController();
+		IngressoController ingressoController = new IngressoController();
+		LivroController livroController = new LivroController();
+		OrganizadorController organizadorController = new OrganizadorController();
+		*/
 		// TODO Auto-generated method stub
 		//18/10
+		MenuEcommerceInterface menuPrincipal = new MenuEcommerceInterface();
+		menuPrincipal.mostrarMenu();
 		
+		ProdutoController produtoController = new ProdutoController();
 		Livro harryPotter = new Livro();
 		harryPotter.setPrecoAtual(55.90f);		
 		harryPotter.setQteEstoque(2);
@@ -83,15 +96,13 @@ public class EComerce {
 		produtoController.setProduto(ingresso);
 		produtoController.setProduto(srAneis);
 		produtoController.setProduto(livro);
+		
+		
+		
 		for(int i = 0; i < produtoController.quantidadeProduto(); i++) {
 			//System.out.println(produtoController.getProduto(i));
 		}
-		EventoInterface ei = new EventoInterface();
-		IngressoInterface ii = new IngressoInterface();
-		Ingresso ing = ii.cadastrarIngresso();
 		
-		System.out.println(ing);
-		Evento evento = ei.cadastrarEvento();
 	}
 
 }
