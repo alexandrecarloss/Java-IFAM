@@ -15,6 +15,10 @@ public class ProdutoController {
 		return produtos.get(indice);
 	}
 	
+	public List<Produto> getTodosProdutos() {
+		return produtos;
+	}
+	
 	public int quantidadeProduto() {
 		return produtos.size();
 	}
