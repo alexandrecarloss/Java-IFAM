@@ -1,5 +1,27 @@
 package controller;
 
-public class IngressoController {
+import java.util.ArrayList;
+import java.util.List;
 
+import model.Ingresso;
+
+
+public class IngressoController {
+	private List<Ingresso> ingressos = new ArrayList<>();
+	
+	public void setIngresso(Ingresso evento) {
+		ingressos.add(evento);
+	}
+	
+	public Ingresso getIngresso(int indice) {
+		return ingressos.get(indice);
+	}
+	
+	public List<Ingresso> getTodosIngressos() {
+		return ingressos;
+	}
+	
+	public int quantidadeIngresso() {
+		return ingressos.size();
+	}
 }
