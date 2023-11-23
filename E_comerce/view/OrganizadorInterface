@@ -1,7 +1,9 @@
 package view;
 
+import java.util.List;
 import java.util.Scanner;
 
+import model.Ingresso;
 import model.Organizador;
 
 public class OrganizadorInterface {
@@ -24,5 +26,11 @@ public class OrganizadorInterface {
 		organizador.setTelefone(eOrganizador.nextLine());
 		
 		return organizador;
+	}
+	
+	public static void listarOrganizadores(List<Organizador> organizadores) {
+		for(Organizador o: organizadores) {
+			System.out.println(o);
+		}
 	}
 }
