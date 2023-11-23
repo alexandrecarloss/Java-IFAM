@@ -1,11 +1,13 @@
 package view;
 
+import java.util.List;
 import java.util.Scanner;
 
+import controller.OrganizadorController;
 import model.Evento;
 
 public class EventoInterface {
-	public static Evento cadastrarEvento() {
+	public static Evento cadastrarEvento(OrganizadorController organizadorController) {
 		Scanner eEvento = new Scanner(System.in);
 		Evento evento = new Evento();
 		System.out.println("CADASTRO DE EVENTO");
@@ -19,8 +21,24 @@ public class EventoInterface {
 		evento.setTipo(eEvento.nextLine());
 		System.out.print("Programação do evento: ");
 		evento.setProgramacao(eEvento.nextLine());
-		evento.setOrganizador(OrganizadorInterface.cadastrarOrganizador());
+		if(organizadorController.quantidadeOrganizador() == 0) {
+			evento.setOrganizador(OrganizadorInterface.cadastrarOrganizador());
+		} else {
+			int indiceOrganizador;
+			System.out.printf("Escolha o evento: ");
+			for(int i = 0; i < organizadorController.quantidadeOrganizador(); i++) {
+				System.out.println("\nIndice : " + i + " " + organizadorController.getOrganizador(i));
+			}
+			indiceOrganizador = eEvento.nextInt();
+			evento.setOrganizador(organizadorController.getOrganizador(indiceOrganizador));
+		}
+		
 		return evento;
 	}
 	
+	public static void listarEventos(List<Evento> eventos) {
+		for(Evento e: eventos) {
+			System.out.println(e);
+		}
+	}
 }
