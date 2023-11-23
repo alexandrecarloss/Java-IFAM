@@ -7,32 +7,68 @@ import controller.IngressoController;
 import controller.LivroController;
 import controller.OrganizadorController;
 import controller.ProdutoController;
+import model.Produto;
 
 public class MenuEcommerceInterface {
-	void mostrarMenu() {
+	ProdutoController produtoController = new ProdutoController();
+	EventoController eventoController = new EventoController();
+	IngressoController ingressoController = new IngressoController();
+	LivroController livroController = new LivroController();
+	OrganizadorController organizadorController = new OrganizadorController();
+	
+	public void mostrarMenu() {
 		Scanner opcaoMenu = new Scanner(System.in);
-		int opcao = -1;
-		EventoController eventoController = new EventoController();
-		IngressoController ingressoController = new IngressoController();
-		LivroController livroController = new LivroController();
-		OrganizadorController organizadorController = new OrganizadorController();
-		ProdutoController produtoController = new ProdutoController();
-		
-		LivroInterface livroInterface = new LivroInterface();
-		while(opcao != 0) {
+		int opcao = 0;
+	
+		do {
 			System.out.println("0 Sair");
-			System.out.println("1 Adicionar Livro");
-			System.out.println("1 Adicionar Ingresso");
-			System.out.println("2 Selecionar um livro");
+			System.out.println("1 Criar produto");
+			System.out.println("2 Listar produtos");
+			System.out.println("3 Criar livro");
+			System.out.println("4 Listar livros");
+			System.out.println("5 Criar ingresso");
+			System.out.println("6 Listar ingressos");
+			System.out.println("7 Criar evento");
+			System.out.println("8 Listar eventos");
+			System.out.println("9 Criar organizador");
+			System.out.println("10 Listar organizador");
 			opcao = opcaoMenu.nextInt();
 			switch(opcao) {
+			case 0:
+				break;
 			case 1:
-				
+				produtoController.setProduto(ProdutoInterface.cadastrarProduto());
 				break;
 			case 2:
-				
+				ProdutoInterface.listarProdutos(produtoController.getTodosProdutos());
 				break;
+			case 3:
+				livroController.setLivro(LivroInterface.cadastrarLivro());
+				break;
+			case 4:
+				LivroInterface.listarLivros(livroController.getTodosLivros());
+				break;
+			case 5:
+				ingressoController.setIngresso(IngressoInterface.cadastrarIngresso(eventoController, organizadorController));
+				break;
+			case 6:
+				IngressoInterface.listarIngressos(ingressoController.getTodosIngressos());
+				break;
+			case 7:
+				eventoController.setEvento(EventoInterface.cadastrarEvento(organizadorController));
+				break;
+			case 8:
+				EventoInterface.listarEventos(eventoController.getTodosEventos());
+				break;
+			case 9:
+				organizadorController.setOrganizador(OrganizadorInterface.cadastrarOrganizador());
+				break;
+			case 10:
+				OrganizadorInterface.listarOrganizadores(organizadorController.getTodosOrganizadores());
+				break;
+			default:
+				System.out.println("Opção inválida!");
 			}
-		} 
+		}while(opcao != 0);
 	}
 }
