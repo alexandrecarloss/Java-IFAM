@@ -1,13 +1,17 @@
 package view;
 
+import java.util.List;
 import java.util.Scanner;
 
+import controller.EventoController;
+import controller.OrganizadorController;
+import model.Evento;
 import model.Ingresso;
 
 public class IngressoInterface {
-	Scanner eIngresso = new Scanner(System.in);
-	Scanner eIngressoInt = new Scanner(System.in);
-	public Ingresso cadastrarIngresso() {
+	public static Ingresso cadastrarIngresso(EventoController eventoController, OrganizadorController organizadorController) {
+		Scanner eIngresso = new Scanner(System.in);
+		Scanner eIngressoInt = new Scanner(System.in);
 		Ingresso ingresso = new Ingresso();
 		System.out.println("CADASTRO DE INGRESSO");
 		System.out.printf("Comprador ingresso: ");
@@ -15,8 +19,25 @@ public class IngressoInterface {
 		System.out.printf("Número ingresso: ");
 		ingresso.setNumero(eIngressoInt.nextInt());
 		System.out.printf("Local do evento do ingresso: ");
-		ingresso.setLocalEvento(eIngresso.nextLine());
-		ingresso.setEvento(EventoInterface.cadastrarEvento());
+		ingresso.setComprador(eIngresso.nextLine());
+		if(eventoController.quantidadeEvento() == 0) {
+			ingresso.setEvento(EventoInterface.cadastrarEvento(organizadorController));
+		} else {
+			int indiceEvento;
+			System.out.printf("Escolha o evento: ");
+			for(int i = 0; i < eventoController.quantidadeEvento(); i++) {
+				System.out.println("\nIndice : " + i + " " + eventoController.getEvento(i));
+			}
+			indiceEvento = eIngressoInt.nextInt();
+			ingresso.setEvento(eventoController.getEvento(indiceEvento));
+		}
+		
 		return ingresso;
+	}
+	
+	public static void listarIngressos(List<Ingresso> ingressos) {
+		for(Ingresso i: ingressos) {
+			System.out.println(i);
+		}
 	}
 }
