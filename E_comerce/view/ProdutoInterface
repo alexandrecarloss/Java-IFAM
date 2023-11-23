@@ -1,12 +1,14 @@
 package view;
 
+import java.util.List;
 import java.util.Scanner;
 
+import controller.ProdutoController;
 import model.Produto;
 
 
 public class ProdutoInterface {
-	public Produto cadastrarProduto() {
+	public static Produto cadastrarProduto() {
 		Scanner eProduto = new Scanner(System.in);
 		Produto produto = new Produto();
 		System.out.println("CADASTRO DE PRODUTO");
@@ -16,9 +18,14 @@ public class ProdutoInterface {
 		produto.setDescricao(eProduto.nextLine());
 		System.out.printf("Preço atual do produto: ");
 		produto.setPrecoAtual(eProduto.nextFloat());
-		System.out.printf("Quantidade de estoque do produto: ");
+		System.out.printf("Quantidade em estoque do produto: ");
 		produto.setQteEstoque(eProduto.nextInt());
-		
 		return produto;
+	}
+	
+	public static void listarProdutos(List<Produto> produtos) {
+		for(Produto p: produtos) {
+			System.out.println(p);
+		}
 	}
 }
